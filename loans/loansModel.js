@@ -1,35 +1,29 @@
- 
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var userSchema = new Schema({
+    loantype: {
+        type: String,
+        required: true
+    },
+    borrowername: {
+        type: String,
+        required: true
+    },
+    amount: {
+        type: Number,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    date: {
+        type: String,
+        required: true
+    }
+});
 
-
- 
-
-
-
- var mongoose = require('mongoose');
- var Schema = mongoose.Schema;
-
- var userSchema = new Schema({
-
-    //  LoanNumber: {
-    //      type: Number,
-    //      required: true
-    //  },
-     LoanType: {
-         type: String,
-         required: true
-     },
-     BorrowerName: {
-         type: String,
-         required: true
-     },
-     Amount:{
-     type: Number,
-     required: true
-     }
- });
-
- module.exports = mongoose.model('users', userSchema);
+module.exports = mongoose.model('loans', userSchema);
 
 
 
- 
